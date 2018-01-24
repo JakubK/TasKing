@@ -1,5 +1,6 @@
 //Colors 
 $white: #e9e6e1;
+$grey: #b8b5c0;
 $purple: #392e5c;
 $purpleLight:#6441a4;
 $purpleMedium: #201c2b;
@@ -10,3 +11,5 @@ $purpleDark: #17141f;
 * {box-sizing: border-box;}
 img {display: block;}
 a {text-decoration: none; color: inherit;}
+body {height: 100vh; background: $purpleDark;}
+main {margin: 60px 0 0 250px;background: $purpleDark;}

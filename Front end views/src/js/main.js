@@ -19,9 +19,9 @@ function navigationPanel() {
     list.classList.toggle("active");
 
     if (list.classList.contains("active")) {
-      list.setAttribute("aria-expanded", "true")
+      navigationUserPanel.setAttribute("aria-expanded", "true")
     } else {
-      list.setAttribute("aria-expanded", "false") 
+      navigationUserPanel.setAttribute("aria-expanded", "false") 
     }
 
   });

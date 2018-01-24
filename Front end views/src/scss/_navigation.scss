@@ -1,5 +1,10 @@
 
+//Navigation 
+
 .navigation {
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 60px;
   background: $purple;
@@ -14,8 +19,6 @@
   }
 }
 
-
-
 //Navigation user panel
 
 .navigation-user-panel {
@@ -28,6 +31,7 @@
   color: $white;
   min-width: 180px;
   z-index: 5;
+  border-left: 1px solid $purpleMedium;
   &:hover {
     background: $purpleLight;
     cursor: pointer;
@@ -55,7 +59,7 @@
   padding: 0 15px;
 }
 
-//Navigation toggle list
+//Navigation user panel settings list
 
 .navigation-user-settings {
   position: absolute;
@@ -82,5 +86,34 @@
       padding: 0 10px 0 0;
       font-size: 13px;
     }
+  }
+}
+
+
+//Navigation menu 
+
+.navigation-menu {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  width: 250px;
+  height: calc( 100% - 60px );
+  background: $purpleDark;
+  border-right: 1px solid $purple;
+}
+.navigation-menu-header {
+  color: $white;
+  padding: 15px 10px;
+  border-bottom: 1px solid $purple;
+}
+.navigation-menu-list li a {
+  display: flex;
+  padding: 10px 12px;
+  color: $grey;
+  .fa {
+    padding: 0 10px 0 0;
+  }
+  &:hover {
+    background: $purple;
   }
 }
