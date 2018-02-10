@@ -33,8 +33,9 @@ input:focus, textarea:focus {
     max-width: 430px;
     width: 100%;
     background: $purpleMedium;
+    min-height: 300px;
     #login-form {
-      padding: 0 30px;
+      padding: 10px 30px;
       label {
         color: $white;
         margin: 0 0 10px 0;
@@ -55,5 +56,13 @@ input:focus, textarea:focus {
       padding: 15px;
       text-align: center;
     }
+  }
+}
+
+//Media 
+
+@media screen and (max-width: 460px) {
+  .login-form-wrapper {
+    margin: 0 15px;
   }
 }
