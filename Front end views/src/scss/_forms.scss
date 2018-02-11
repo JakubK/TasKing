@@ -23,19 +23,6 @@ input:focus, textarea:focus {
 
 //Login page form
 
-#login-page {
-  width: 100%;
-  height: 100%;
-}
-#login-page-header {
-  width: 100%;
-  padding: 50px 0;
-  img {
-    width: 200px;
-    height: auto;
-    margin: 0 auto;
-  }
-}
 #login-content {
   height: 100%;
   width: 100%;
@@ -71,6 +58,14 @@ input:focus, textarea:focus {
       text-align: center;
     }
   }
+}
+
+//Helper class edit
+
+input.warning {
+  color: $grey;
+  outline-color: $red;
+  border-color: $red;
 }
 
 //Media 
