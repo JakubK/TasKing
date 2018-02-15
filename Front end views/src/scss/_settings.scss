@@ -6,11 +6,3 @@ $purpleLight:#6441a4;
 $purpleMedium: #201c2b;
 $purpleDark: #17141f;
 $red: #db5e50;
-
-//Basic styles
-
-* {box-sizing: border-box;}
-img {display: block;}
-a {text-decoration: none; color: inherit;}
-body {height: 100vh; background: $purpleDark;}
-main {margin: 60px 0 0 250px;background: $purpleDark;}
