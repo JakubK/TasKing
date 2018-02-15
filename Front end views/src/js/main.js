@@ -26,3 +26,19 @@ function navigationPanel() {
   });
 }  navigationPanel();
 
+function navigationButton() {
+  const button = document.querySelector(".navigation-button"),
+        menu = document.querySelector(".navigation-menu");
+
+  button.addEventListener("click", () => {
+    button.classList.toggle("active");
+    menu.classList.toggle("active");
+
+    if (button.classList.contains("active")) {
+      menu.setAttribute("aria-expanded", "true")
+    } else {
+      menu.setAttribute("aria-expanded", "false") 
+    }
+  });
+} navigationButton();
+
