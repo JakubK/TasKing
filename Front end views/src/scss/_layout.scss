@@ -4,7 +4,11 @@
 img {display: block;}
 a {text-decoration: none; color: inherit;}
 body {background: $purpleDark;}
-main {margin: 50px 0 0 250px; background: $purpleDark;}
+main {
+  margin: 50px 0 0 250px; 
+  background: $purpleDark;
+  padding: 25px;
+}
 
 //Login page
 
@@ -27,5 +31,25 @@ main {margin: 50px 0 0 250px; background: $purpleDark;}
 @media screen and (max-width: 768px) {
   main {
     margin: 50px 0 0 0;
+  }
+}
+
+//Panel tiles 
+
+.panel-tile {
+  background: $purpleMedium;
+  color: $grey;
+  max-width: 400px;
+  width: 100%;
+  .panel-header {
+    padding: 15px;
+    background: $purpleLight;
+    h3 {
+      color: $white;
+    }
+  }
+  .panel-body {
+    padding: 15px 20px;
+    font-size: 14px;
   }
 }

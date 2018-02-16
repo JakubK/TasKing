@@ -98,7 +98,7 @@
   top: 50px;
   width: 250px;
   height: calc( 100% - 50px );
-  background: $purpleDark;
+  background: $purpleXD;
   border-right: 1px solid $purple;
   transform: translate3d(0,0,0);
   transition: transform 0.5s;
@@ -117,6 +117,18 @@
   }
   &:hover {
     background: $purple;
+  }
+}
+.navigation-menu-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px 15px;
+  width: 100%;
+  text-align: center;
+  color: $grey;
+  a {
+    color: $purpleLight;
   }
 }
 .navigation-menu.active {
