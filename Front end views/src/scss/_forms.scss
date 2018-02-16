@@ -57,6 +57,18 @@ input:focus, textarea:focus {
       padding: 15px;
       text-align: center;
     }
+    .login-form-footer {
+      padding: 0 30px 15px 30px;
+      text-align: right;
+      a {
+        padding: 2px;
+        color: $grey;
+        font-size: 13px;
+        &:hover {
+          color: $purpleLight;
+        }
+      } 
+    }
   }
 }
 

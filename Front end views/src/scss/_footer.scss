@@ -4,6 +4,9 @@
   padding: 20px;
   p {
     color: $grey;
-    text-align: center
+    text-align: center;
+    a {
+      color: $purpleLight;
+    }
   }
 }
