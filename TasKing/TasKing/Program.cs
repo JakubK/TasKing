@@ -7,14 +7,15 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using TasKing.Domain.Concrete;
 
 namespace TasKing
 {
     public class Program
     {
         public static void Main(string[] args)
-        {
-            BuildWebHost(args).Run();
+        {         
+                BuildWebHost(args).Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
