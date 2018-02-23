@@ -31,6 +31,7 @@ main {
 @media screen and (max-width: 768px) {
   main {
     margin: 50px 0 0 0;
+    padding: 25px 15px;
   }
 }
 
@@ -52,4 +53,99 @@ main {
     padding: 15px 20px;
     font-size: 14px;
   }
+}
+
+//Tasks Header board
+
+.board {
+  background: $purpleMedium;
+  width: 100%;
+  max-width: 800px;
+  color: $white;
+  font-size: 12px;
+}
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: $purpleLight;
+}
+.board-name {
+  font-size: 20px;
+}
+.board-settings {
+  button {
+    color: $grey;
+    font-size: 14px;
+    padding: 5px;
+    transition: color 0.5s;
+    &:hover {
+      cursor: pointer;
+      color: $white;
+    }
+  }
+}
+
+.fa-sort {
+  position: relative;
+}
+.fa-sort .sort-list {
+  position: absolute;
+  left: -50px;
+  top: 34px;
+  background: $purpleDark;
+  min-width: 200px;
+  display: none;
+  text-align: left;
+  li {
+    padding: 10px;
+  }
+  &.active {
+    display: block;
+  }
+}
+
+//Task item
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+.task-item input {
+  width: auto;
+}
+.task-item input[type="checkbox"] {
+  display: none;
+}
+.task-item label {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 2px solid $purpleLight;
+  margin: 0 10px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.task-item input[type="checkbox"]:checked + label {
+  background: $purpleLight;
+  span {
+    opacity: 1;
+  }
+}
+.task-item label span {
+  font-size: 8px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.task-item label:hover {
+  cursor: pointer;
+  span {
+    opacity: 1;
+  }
+}
+.task-description.checked {
+  text-decoration: line-through;
 }
