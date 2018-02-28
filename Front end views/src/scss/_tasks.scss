@@ -1,0 +1,107 @@
+//Task item
+
+.task-item {
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.10);
+  margin: 10px 0;
+}
+.task-item-box {
+  position: relative;
+}
+
+//Task checkbox 
+
+.task-item input[type="checkbox"] {
+  display: none;
+}
+.task-item label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 1px solid $purpleLight;
+  transition: background 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.task-item input[type="checkbox"]:checked + label {
+  background: $purpleLight;
+}
+.task-item input[type="checkbox"]:checked + label span {
+  opacity: 1;
+  color: $white;
+}
+.task-item label span {
+  font-size: 9px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.task-item label:hover {
+  cursor: pointer;
+}
+.task-item label:hover span {
+  opacity: 1;
+  color: $greyDark;
+}
+
+//Task description 
+
+.task-description {
+  padding: 30px 10px;
+  margin: 0 0 0 50px;
+}
+.task-description.checked {
+  text-decoration: line-through;
+}
+
+//Add task & edit task
+
+.add-task {
+  padding: 20px 0;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.10);
+  margin: 10px 0;
+}
+.task-item-add.visible {
+  display: block;
+}
+.btn-task-item.hidden {
+  display: none;
+}
+.task-item-box.hidden {
+  display: none;
+}
+.task-item-edit {
+  display: none;
+  padding: 20px;
+}
+.task-item-edit .task-item-edit-input {
+  margin: 0 0 10px 0;
+}
+.task-item-edit .task-item-edit-buttons {
+  display: flex;
+}
+.task-item-edit.visible {
+  display: block;
+}
+.task-item-add {
+  display: none;
+  padding: 0 20px;
+}
+.task-item-add-input {
+  margin: 0 0 10px 0;
+}
+.add-task .task-item-edit {
+  display: block;;
+}
+.add-task button:nth-child(2), .task-item-edit button:nth-child(2) {
+  margin: 0 0 0 10px;
+}
+.task-item-edit .task-item-edit-buttons{
+  position: relative;
+}
+.task-item-edit-buttons .btn-delete {
+  position: absolute;
+  right: 0;
+}
