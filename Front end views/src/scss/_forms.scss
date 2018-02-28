@@ -21,6 +21,15 @@ input:focus, textarea:focus {
   outline-color: $purpleLight;
 }
 
+//Task input 
+
+.task-input {
+  color: $greyDark;
+  width: 100%;
+  border-color: $grey;
+  background: transparent;
+}
+
 //Login page form
 
 #login-content {

@@ -116,16 +116,56 @@
               <label for="checkbox1">
                 <span class="fa fa-check" aria-hidden="true"></span>
               </label>
+              <p class="task-description">Przykładowe zadanko</p>
             </div>
-            <p class="task-description">Zrób stronę internetową o teletubisiach czy co tam i fnf fdg dfg fdh fgh gf</p>
+            <div class="task-item-edit">
+              <div class="task-item-edit-input">
+                <input class="task-input" type="text">
+              </div>
+              <div class="task-item-edit-buttons">
+                <button class="btn-task-item btn-add">Zapisz</button>
+                <button class="btn-task-item btn-decline">Anuluj</button>
+                <button class="btn-task-item btn-delete"><span class="fa fa-trash-o"></span></button>
+              </div>
+            </div>
+          </li>
+          <li class="task-item">
+            <div class="task-item-box">
+              <input type="checkbox" id="checkbox2">
+              <label for="checkbox2">
+                <span class="fa fa-check" aria-hidden="true"></span>
+              </label>
+              <p class="task-description">Przykładowe zadanko 2</p>
+            </div>
+            <div class="task-item-edit">
+              <div class="task-item-edit-input">
+                <input class="task-input" type="text">
+              </div>
+              <div class="task-item-edit-buttons">
+                <button class="btn-task-item btn-add">Zapisz</button>
+                <button class="btn-task-item btn-decline">Anuluj</button>
+                <button class="btn-task-item btn-delete">Usuń</button>
+              </div>
+            </div>
           </li>
         </ul>
+
+        <div class="add-task">
+          <button class="btn-task-item" aria-label="add new item to the list" aria-controls="task-item-add" aria-expanded="false">+ Add task</button>
+          <div class="task-item-add">
+            <div class="task-item-add-input">
+              <input class="task-input" type="text">
+            </div>
+            <div class="task-item-edit-buttons">
+              <button class="btn-task-item btn-add" id="add-task">Dodaj</button>
+              <button class="btn-task-item btn-decline" id="cancel-task">Anuluj</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-
-  
   <!-- scripts -->
   <script src="js/main.js"></script>
   <script src="js/task.js"></script>

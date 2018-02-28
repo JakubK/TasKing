@@ -3,10 +3,10 @@
 * {box-sizing: border-box;}
 img {display: block;}
 a {text-decoration: none; color: inherit;}
-body {background: $purpleDark;}
+body {background: $white;}
 main {
   margin: 50px 0 0 250px; 
-  background: $purpleDark;
+  background: $white;
   padding: 25px;
 }
 
@@ -58,34 +58,32 @@ main {
 //Tasks Header board
 
 .board {
-  background: $purpleMedium;
+
   width: 100%;
   max-width: 800px;
-  color: $white;
+  color: $purpleDark;
   font-size: 12px;
 }
 .board-header {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
-  background: $purpleLight;
 }
 .board-name {
   font-size: 20px;
 }
 .board-settings {
   button {
-    color: $grey;
+    color: $purple;
     font-size: 14px;
     padding: 5px;
     transition: color 0.5s;
     &:hover {
       cursor: pointer;
-      color: $white;
+      color: $purpleLight;
     }
   }
 }
-
 .fa-sort {
   position: relative;
 }
@@ -93,10 +91,11 @@ main {
   position: absolute;
   left: -50px;
   top: 34px;
-  background: $purpleDark;
+  background: $white;
   min-width: 200px;
   display: none;
   text-align: left;
+  outline: none;
   li {
     padding: 10px;
   }
@@ -108,13 +107,15 @@ main {
 //Task item
 
 .task-item {
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.10);
+  margin: 10px 0;
+}
+.task-item-box {
   display: flex;
   align-items: center;
   padding: 20px 0;
 }
-.task-item input {
-  width: auto;
-}
+
 .task-item input[type="checkbox"] {
   display: none;
 }
@@ -122,9 +123,9 @@ main {
   width: 20px;
   height: 20px;
   border-radius: 100%;
-  border: 2px solid $purpleLight;
+  border: 1px solid $purpleLight;
   margin: 0 10px;
-  transition: 0.5s;
+  transition: background 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,10 +134,11 @@ main {
   background: $purpleLight;
   span {
     opacity: 1;
+    color: $white;
   }
 }
 .task-item label span {
-  font-size: 8px;
+  font-size: 9px;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -146,6 +148,65 @@ main {
     opacity: 1;
   }
 }
+.task-description {
+  padding: 0 10px 0 0;
+}
 .task-description.checked {
   text-decoration: line-through;
+}
+
+.task-item-box.hidden {
+  display: none;
+}
+.task-item-edit {
+  display: none;
+  padding: 20px;
+  .task-item-edit-input {
+    margin: 0 0 10px 0;
+  }
+  .task-item-edit-buttons {
+    display: flex;
+  }
+}
+.task-item-edit.visible {
+  display: block;
+}
+
+//Task item add 
+
+.task-item-add {
+  display: none;
+  padding: 0 20px;
+}
+.task-item-add-input {
+  margin: 0 0 10px 0;
+}
+
+
+//Add task & edit task
+
+.add-task {
+  padding: 20px 0;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.10);
+  margin: 10px 0;
+}
+.task-item-add.visible {
+  display: block;
+}
+.btn-task-item.hidden {
+  display: none;
+}
+
+.add-task .task-item-edit {
+  display: block;;
+}
+.add-task button:nth-child(2), .task-item-edit button:nth-child(2) {
+  margin: 0 0 0 10px;
+}
+.btn-item-edit-buttons {
+  position: relative;
+}
+.task-item-edit-buttons .btn-delete {
+  position: absolute;
+  right: 45px;
 }
