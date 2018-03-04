@@ -7,13 +7,20 @@ function modal() {
 
   modalButton.addEventListener("click", () => {
     overlay.style.display = "block";
+    overlay.style.animation = "show 0.25s linear forwards";
+    modal.style.animation = "modal-show 0.5s linear forwards";
     modal.classList.add("open");
     modalButton.setAttribute("aria-expanded", "true");
   });
 
   function close() {
-    overlay.style.display = "none";
-    modal.classList.remove("open");
+    overlay.style.animation = "hide 0.25s linear forwards";
+    modal.style.animation = "modal-hide 0.25s linear forwards";
+
+    overlay.addEventListener("animationend", () => {
+      overlay.style.display = "none";
+    });
+
     modalButton.setAttribute("aria-expanded", "false");
   };
 

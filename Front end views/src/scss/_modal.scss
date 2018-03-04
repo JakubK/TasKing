@@ -3,7 +3,7 @@
   left: 50%;
   top: 60px;
   z-index: 101;
-  transform: translateX(-50%);
+  transform: translate3d(-50%,0,0);
   height: 300px;
   max-width: 420px;
   width: 100%;
@@ -49,6 +49,19 @@
   font-size: 13px;
   padding: 20px 0;
   color: $greyMedium;
+}
+
+@keyframes modal-show {
+  0% {opacity: 0; transform: translate3d(-50%,0,0)}
+  100% {opacity: 1; transform: translate3d(-50%,60px,0)}
+}
+@keyframes modal-hide {
+  0% {opacity: 1; transform: translate3d(-50%,60px,0)}
+  100% {opacity: 0; transform: translate3d(-50%,0,0)}
+}
+@keyframes hide {
+  0% {background: rgba(0,0,0,0.50);}
+  100% {background: rgba(0,0,0,0);}
 }
 
 //Media 
