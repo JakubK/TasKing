@@ -96,7 +96,7 @@
           <h2>Nazwa tablicy</h2>
         </div>
         <div class="board-settings">
-          <button class="fa fa-user-plus"></button>
+          <button class="fa fa-user-plus" aria-label="modal" aria-controls="#invate-user" aria-expanded="false" ></button>
           <button class="fa fa-sort">
             <ul class="sort-list">
               <li>Sort by date</li>
@@ -166,9 +166,34 @@
     </section>
   </main>
 
+  <!-- add user modal -->
+
+  <div class="modal" id="invate-user">
+    <div class="modal-header">
+      <h3>Add User</h3>
+      <button class="fa fa-times" id="close-modal"></button>
+    </div>
+    <div class="modal-content">
+      <div class="modal-content-form">
+        <input class="modal-input" type="text" placeholder="Email or nickname">
+        <button type="button" class="btn-add">Invate</button>
+      </div>
+      <div class="modal-content-description">
+        <h4>Cooperate with others</h4>
+        <p>
+          Add user to your table, you will be able to cooperate with other users or your friends or colleagues. It's very simply!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
   <!-- scripts -->
   <script src="js/main.js"></script>
   <script src="js/task.js"></script>
+  <script src="js/modal.js"></script>
+
 
 </body>
 </html>
