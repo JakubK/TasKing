@@ -1,4 +1,4 @@
-function modal() {
+const modal = () => {
   const overlay = document.querySelector(".overlay");
   const modal = document.querySelector(".modal");
   const modalButton = document.querySelector(".fa-user-plus");
@@ -7,19 +7,21 @@ function modal() {
 
   modalButton.addEventListener("click", () => {
     overlay.style.display = "block";
-    overlay.style.animation = "show 0.25s linear forwards";
-    modal.style.animation = "modal-show 0.5s linear forwards";
-    modal.classList.add("open");
+    overlay.style.animation = "show 0.4s ease-in forwards";
+    modal.style.animation = "modal-show 0.4s ease-in forwards";
+    modal.style.display = "block";
     modalButton.setAttribute("aria-expanded", "true");
   });
 
-  function close() {
-    overlay.style.animation = "hide 0.25s linear forwards";
-    modal.style.animation = "modal-hide 0.25s linear forwards";
-
-    overlay.addEventListener("animationend", () => {
+  const close = () => {
+    overlay.style.animation = "hide 0.4s ease-in forwards";
+    modal.style.animation = "modal-hide 0.4s ease-in forwards";
+    modal.addEventListener('animationend', hide);
+    function hide() {
       overlay.style.display = "none";
-    });
+      modal.style.display = "none";
+      modal.removeEventListener('animationend', hide);
+    }
 
     modalButton.setAttribute("aria-expanded", "false");
   };
@@ -38,6 +40,7 @@ function modal() {
       close();
     }
   };
+}; modal();
 
-} modal();
+
 

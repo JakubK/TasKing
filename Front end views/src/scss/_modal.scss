@@ -11,9 +11,6 @@
   box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.30);
   display: none;
 }
-.modal.open {
-  display: block;
-}
 .modal-header {
   padding: 20px;
   display: flex;
@@ -52,17 +49,43 @@
 }
 
 @keyframes modal-show {
-  0% {opacity: 0; transform: translate3d(-50%,0,0)}
-  100% {opacity: 1; transform: translate3d(-50%,60px,0)}
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0); 
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, 60px, 0); 
+  } 
 }
+
 @keyframes modal-hide {
-  0% {opacity: 1; transform: translate3d(-50%,60px,0)}
-  100% {opacity: 0; transform: translate3d(-50%,0,0)}
+  0% {
+    opacity: 1;
+    transform: translate3d(-50%, 60px, 0); 
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0); 
+  } 
 }
 @keyframes hide {
-  0% {background: rgba(0,0,0,0.50);}
-  100% {background: rgba(0,0,0,0);}
+  0% {
+    background: rgba(0, 0, 0, 0.5); 
+  }
+  100% {
+    background: transparent; 
+  } 
 }
+@keyframes show {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
 
 //Media 
 
