@@ -11,12 +11,14 @@ const modal = () => {
     modal.style.animation = "modal-show 0.4s ease-in forwards";
     modal.style.display = "block";
     modalButton.setAttribute("aria-expanded", "true");
+    exitButton.focus();
   });
 
   const close = () => {
     overlay.style.animation = "hide 0.4s ease-in forwards";
     modal.style.animation = "modal-hide 0.4s ease-in forwards";
     modal.addEventListener('animationend', hide);
+    exitButton.blur();
     function hide() {
       overlay.style.display = "none";
       modal.style.display = "none";
