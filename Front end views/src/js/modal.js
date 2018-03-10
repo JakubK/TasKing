@@ -2,8 +2,7 @@ const modal = () => {
   const overlay = document.querySelector(".overlay");
   const modal = document.querySelector(".modal");
   const modalButton = document.querySelector(".fa-user-plus");
-  const exitButton = document.querySelector("#close-modal");
-
+  const exitButton = document.querySelector("#close-modal");``
 
   modalButton.addEventListener("click", () => {
     overlay.style.display = "block";
@@ -13,18 +12,19 @@ const modal = () => {
     modalButton.setAttribute("aria-expanded", "true");
     exitButton.focus();
   });
-
+  
   const close = () => {
     overlay.style.animation = "hide 0.4s ease-in forwards";
     modal.style.animation = "modal-hide 0.4s ease-in forwards";
-    modal.addEventListener('animationend', hide);
-    exitButton.blur();
-    function hide() {
+
+    const hide = () => {
       overlay.style.display = "none";
       modal.style.display = "none";
       modal.removeEventListener('animationend', hide);
     }
-
+    
+    modal.addEventListener('animationend', hide);
+    exitButton.blur();
     modalButton.setAttribute("aria-expanded", "false");
   };
 

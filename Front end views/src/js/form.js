@@ -1,9 +1,8 @@
-function validForm() {
-  
-  const valid = /^(?=.*\d)(?=.*[a-z])(?=.*[\!\@\#\$\%\^\&\*\(\)\_\+\-\=])(?=.*[A-Z])(?!.*\s).{8,}$/,
-        inputWrapper = document.querySelector("#password-group"),
-        input = document.querySelector("#password");
-        warning = document.createElement("p");
+const validForm = () => {
+  const valid = /^(?=.*\d)(?=.*[a-z])(?=.*[\!\@\#\$\%\^\&\*\(\)\_\+\-\=])(?=.*[A-Z])(?!.*\s).{8,}$/;
+  const inputWrapper = document.querySelector("#password-group");
+  const input = document.querySelector("#password");
+  const warning = document.createElement("p");
 
   warning.setAttribute("class", "warning");
   warning.innerText = "Password is incorrect";
@@ -23,5 +22,5 @@ function validForm() {
     }
   });
 
-} validForm();
+}; validForm();
 

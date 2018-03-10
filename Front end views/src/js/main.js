@@ -1,18 +1,9 @@
-/*
+
 const navigationPanel = () => {
-  const navigationUserPanel = document.querySelector(".navigation-user-panel"),
-        icon = document.querySelector(".navigation-user-panel .fa")
-
-  navigationUserPanel.addEventListener("click", () => {
-    icon.classList.toggle("active");
-  });
-} */
-
-function navigationPanel() {
-  const navigationUserPanel = document.querySelector(".navigation-user-panel"),
-        icon = document.querySelector(".navigation-user-panel .fa"),
-        list = document.querySelector(".navigation-user-panel .navigation-user-settings"),
-        aria = list.getAttribute("aria-expanded");
+  const navigationUserPanel = document.querySelector(".navigation-user-panel");
+  const icon = document.querySelector(".navigation-user-panel .fa");
+  const list = document.querySelector(".navigation-user-panel .navigation-user-settings");
+  const aria = list.getAttribute("aria-expanded");
 
   navigationUserPanel.addEventListener("click", () => {
     icon.classList.toggle("active");
@@ -24,11 +15,11 @@ function navigationPanel() {
       navigationUserPanel.setAttribute("aria-expanded", "false") 
     }
   });
-}  navigationPanel();
+};  navigationPanel();
 
-function navigationButton() {
-  const button = document.querySelector(".navigation-button"),
-        menu = document.querySelector(".navigation-menu");
+const navigationMenu = () => {
+  const button = document.querySelector(".navigation-button");
+  const menu = document.querySelector(".navigation-menu");
 
   button.addEventListener("click", () => {
     button.classList.toggle("active");
@@ -40,5 +31,5 @@ function navigationButton() {
       menu.setAttribute("aria-expanded", "false") 
     }
   });
-} navigationButton();
+}; navigationMenu();
 

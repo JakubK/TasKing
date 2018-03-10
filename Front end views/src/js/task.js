@@ -1,4 +1,4 @@
-function addElement() {
+const addElement = () => {
   const addButton = document.querySelector(".add-task .btn-task-item");
   const cancelButton = document.querySelector("#cancel-task");
   const confirmButton = document.querySelector("#add-task");
@@ -37,9 +37,9 @@ function addElement() {
     input.value = "";
   });
 
-} addElement();
+}; addElement();
 
-function editElement() {
+const editElement = () => {
   const tasksList = document.querySelector(".tasks-list");
   const checkbox = document.querySelectorAll(".task-item label");
   const taskDescription = document.querySelectorAll(".task-item .task-description");
@@ -77,9 +77,9 @@ function editElement() {
       taskDescription[i].classList.toggle("checked");
     });
   }
-} editElement();
+}; editElement();
 
-function sortPanel() {
+const sortPanel = () => {
   const sortButton = document.querySelector(".board-settings .fa-sort");
   const sortList = document.querySelector(".board-settings .fa-sort .sort-list");
   const aria = sortButton.getAttribute("aria-expanded");
@@ -94,4 +94,4 @@ function sortPanel() {
       sortButton.setAttribute("aria-expanded", "false") 
     }
   });
-}  sortPanel();
+};  sortPanel();
