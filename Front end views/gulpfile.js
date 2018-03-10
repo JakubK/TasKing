@@ -1,19 +1,20 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCSS = require('gulp-clean-css');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var imagemin = require('gulp-imagemin');
-var changed = require('gulp-changed');
-var htmlReaplce = require('gulp-html-replace');
-var htmlMin = require('gulp-htmlmin');
-var del = require('del');
-var sequence = require('run-sequence');
+const gulp = require('gulp');
+const browserSync = require('browser-sync');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
+const htmlReaplce = require('gulp-html-replace');
+const htmlMin = require('gulp-htmlmin');
+const del = require('del');
+const sequence = require('run-sequence');
+const babel = require('gulp-babel');
 
-var config = {
+const config = {
   dist: 'dist/',
   src: 'src/',
   cssin: 'src/css/**/*.css',
@@ -32,11 +33,11 @@ var config = {
   jsreplaceout: 'js/script.js'
 };
 
-gulp.task('reload', function() {
+gulp.task('reload', () => {
   browserSync.reload();
 });
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['sass'], () => {
   browserSync({
     server: config.src
   });
@@ -45,7 +46,7 @@ gulp.task('serve', ['sass'], function() {
   gulp.watch(config.scssin, ['sass']);
 });
 
-gulp.task('sass', function() {
+gulp.task('sass', () => {
   return gulp.src(config.scssin)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -57,28 +58,41 @@ gulp.task('sass', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('css', function() {
+gulp.task('css', () => {
   return gulp.src(config.cssin)
     .pipe(concat(config.cssoutname))
     .pipe(cleanCSS())
     .pipe(gulp.dest(config.cssout));
 });
 
-gulp.task('js', function() {
+gulp.task("js-babel", () => {
   return gulp.src(config.jsin)
+  .pipe(sourcemaps.init())
+  .pipe(babel({
+      presets: ['env']
+  }))
+  .pipe(sourcemaps.write())
+});
+
+gulp.task('js', () => {
+  return gulp.src(config.jsin)
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['env']
+    }))
     .pipe(concat(config.jsoutname))
     .pipe(uglify())
     .pipe(gulp.dest(config.jsout));
 });
 
-gulp.task('img', function() {
+gulp.task('img', () => {
   return gulp.src(config.imgin)
     .pipe(changed(config.imgout))
     .pipe(imagemin())
     .pipe(gulp.dest(config.imgout));
 });
 
-gulp.task('html', function() {
+gulp.task('html', () => {
   return gulp.src(config.htmlin)
     .pipe(htmlReaplce({
       'css': config.cssreplaceout,
@@ -92,11 +106,11 @@ gulp.task('html', function() {
     .pipe(gulp.dest(config.dist))
 });
 
-gulp.task('clean', function() {
+gulp.task('clean', () => {
   return del([config.dist]);
 });
 
-gulp.task('build', function() {
+gulp.task('build', () => {
   sequence('clean', ['html', 'js', 'css', 'img']);
 });
 
