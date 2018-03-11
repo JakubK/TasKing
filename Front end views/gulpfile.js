@@ -30,7 +30,8 @@ const config = {
   cssoutname: 'style.css',
   jsoutname: 'script.js',
   cssreplaceout: 'css/style.css',
-  jsreplaceout: 'js/script.js'
+  jsreplaceout: 'js/script.js',
+  watchingdir: 'src/**'
 };
 
 gulp.task('reload', () => {
@@ -115,3 +116,7 @@ gulp.task('build', () => {
 });
 
 gulp.task('default', ['serve']);
+
+gulp.task('watch', () => {
+	gulp.watch(config.watchingdir, ['build']);
+});
